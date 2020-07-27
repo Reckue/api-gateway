@@ -21,6 +21,9 @@ dependencies {
 
     /* eureka client */
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.2.RELEASE'
+
+    /* zuul */
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.3.RELEASE'
 }
 
 def profile = "dev"
