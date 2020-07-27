@@ -13,5 +13,18 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    /* actuator */
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    /* eureka client */
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.2.RELEASE'
+}
+
+def profile = "dev"
+
+bootRun {
+    args = ["--spring.profiles.active=" + profile]
 }
