@@ -25,3 +25,9 @@ dependencies {
     /* zuul */
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.3.RELEASE'
 }
+
+def profile = "develop"
+
+bootRun {
+    args = ["--spring.profiles.active=" + profile]
+}
