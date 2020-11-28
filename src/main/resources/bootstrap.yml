@@ -3,6 +3,9 @@ spring:
     name: api-gateway
 
 --- # cloud # ---
+spring:
+  profiles: cloud
+
 server:
   port: 8000
 
@@ -23,6 +26,9 @@ zuul:
       path: /api/v1/account/**
 
 --- # develop # ---
+spring:
+  profiles: develop
+
 server:
   port: 8001
 
