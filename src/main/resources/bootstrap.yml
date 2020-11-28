@@ -1,15 +1,20 @@
 spring:
   application:
-    name: api-gateway
+    name: gateway-service
 
 zuul:
+  prefix: /api/v1
   routes:
     post:
       serviceId: post-api
-      path: /api/v1/post/**
+      path: /post/**
     account:
       serviceId: account-api
-      path: /api/v1/account/**
+      path: /account/**
+
+ribbon:
+  eureka:
+    enabled: true
 
 --- # cloud # ---
 spring:
@@ -31,10 +36,3 @@ spring:
 
 server:
   port: 8000
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-      connect-timeout-millis: 10000
-      socket-timeout-millis: 60000
